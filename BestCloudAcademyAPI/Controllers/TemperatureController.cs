@@ -7,13 +7,23 @@ using System.Threading.Tasks;
 
 namespace BestCloudAcademyAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("")]
     [ApiController]
     public class TemperatureController : ControllerBase
     {
-        public string Get()
+
+        Person person1 = new Person { FirstName = "Görkem Etem", LastName = "Irmak" };
+
+        [HttpGet("")]
+        public Person Get()
         {
-            return "Hello";
+            return person1;
+        }
+
+        [HttpGet("temperature")]
+        public string Get(string city)
+        {
+            return "DENEME";
         }
     }
 }
