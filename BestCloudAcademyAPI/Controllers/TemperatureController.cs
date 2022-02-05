@@ -22,7 +22,7 @@ namespace BestCloudAcademyAPI.Controllers
         }
 
         [HttpGet("temperature")]
-        public string Get()
+        public string Get2()
         {
             string api = "088311902dbed3f3e2094d195a47cec6";
             string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
