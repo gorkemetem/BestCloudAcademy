@@ -31,5 +31,6 @@ namespace BestCloudAcademyAPI.Controllers
             weather1.Temperature = temp;
             return weather1;
         }
+
     }
 }
