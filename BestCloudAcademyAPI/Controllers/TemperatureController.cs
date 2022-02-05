@@ -22,13 +22,13 @@ namespace BestCloudAcademyAPI.Controllers
         }
 
         [HttpGet("temperature")]
-        public string Get2()
+        public string Get(string city)
         {
             string api = "088311902dbed3f3e2094d195a47cec6";
-            string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
+            string connection = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&mode=xml&lang=tr&units=metric&appid=" + api;
             XDocument weather = XDocument.Load(connection);
             var temp = weather.Descendants("temperature").ElementAt(0).Attribute("value").Value;
-            return "temperature = " + temp;
+            return "temperature for " + city + " = " + temp;
         }
     }
 }
